@@ -16,6 +16,7 @@
 
   wsl.enable = true;
   wsl.defaultUser = "simon";
+  wsl.docker-desktop.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];  
 
@@ -32,7 +33,15 @@
     curl
   ];
 
+  fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk-sans
+  ];
+
+
   users.users.simon.linger = true;
+  users.users.simon.extraGroups = [ "wheel" "docker" ];
+  programs.nix-ld.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

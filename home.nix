@@ -15,15 +15,18 @@
   };
 
   home.packages = with pkgs; [
+    (hiPrio gcc)
     ripgrep
     coreutils
     fd
     clang
     fira
     fira-code
+    nodejs
     bun
     nodePackages.prettier
     nodePackages.typescript-language-server
+    vscode-langservers-extracted
     typescript
     nil
     gnupg
@@ -34,6 +37,8 @@
     racket
     fava
     beancount-language-server
+    ispell
+    multimarkdown
   ];
 
   programs.git = {
