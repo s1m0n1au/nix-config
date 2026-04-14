@@ -52,3 +52,7 @@
 ;; (unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;; (unpin! t)
+
+(package! css-in-js-mode
+  :pin "bcbacde99123f65978580dcf8f1aa51107e546c3"
+  :recipe (:host github :repo "orzechowskid/tree-sitter-css-in-js" :branch "main"))
